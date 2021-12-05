@@ -17,7 +17,7 @@ export function createResponse(response: any[] = [], statusCode: code = 200, err
         "Content-Type": "text/json",
         'Access-Control-Allow-Credentials': 'true',
         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Origin': 'chrome-extension://mcoocjgnophphekdkhpggfjhfddnpgde',
+        'Access-Control-Allow-Origin': 'https://selfservice.austincc.edu', // 'chrome-extension://mcoocjgnophphekdkhpggfjhfddnpgde',
         'Access-Control-Allow-Headers': 'Content-Type'
       }
     })

@@ -48,7 +48,7 @@ export class RMP {
 
   async searchProfessors(query: string): Promise<NewProfessorSearch[] | false> {
     const body = {
-      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings school{id legacyId name}}}}}}`,
+      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings wouldTakeAgainPercentRounded avgDifficultyRounded school{id legacyId name}}}}}}`,
       "variables": {
         "query": {
           "text": query,

@@ -58,7 +58,7 @@ export interface OldDetailedProfessorSearch {
         edges: [
           {
             node: {
-              avgDifficulty: number
+              // avgDifficulty: number
               avgDifficultyRounded: number
               avgRatingRounded: number
               department: string
@@ -74,10 +74,10 @@ export interface OldDetailedProfessorSearch {
                       clarityRatingRounded: number
                       class: string
                       comment: string
-                      courseType: string
+                      // courseType: string
                       date: string
                       difficultyRatingRounded: number
-                      flagStatus: "FLAGGED" | "UNFLAGGED"
+                      // flagStatus: "FLAGGED" | "UNFLAGGED"
                       grade: string
                       helpfulRatingRounded: string
                       iWouldTakeAgain: null | boolean
@@ -94,13 +94,13 @@ export interface OldDetailedProfessorSearch {
                 ]
               }
               school: {
-                avgRatingRounded: number
-                city: string
+                // avgRatingRounded: number
+                // city: string
                 id: string
                 legacyId: number
                 name: string
               }
-              wouldTakeAgainCount: number
+              // wouldTakeAgainCount: number
               wouldTakeAgainPercentRounded: number
             }
           }
@@ -124,7 +124,7 @@ export interface NewProfessorSearch {
 }
 
 export interface NewDetailedProfessorSearch {
-  avgDifficulty: number
+  // avgDifficulty: number
   avgDifficultyRounded: number
   avgRatingRounded: number
   department: string
@@ -138,10 +138,10 @@ export interface NewDetailedProfessorSearch {
       clarityRatingRounded: number
       class: string
       comment: string
-      courseType: string
+      // courseType: string
       date: string
       difficultyRatingRounded: number
-      flagStatus: "FLAGGED" | "UNFLAGGED"
+      // flagStatus: "FLAGGED" | "UNFLAGGED"
       grade: string
       helpfulRatingRounded: string
       iWouldTakeAgain: null | boolean
@@ -156,13 +156,13 @@ export interface NewDetailedProfessorSearch {
     }
   ]
   school: {
-    avgRatingRounded: number
-    city: string
+    // avgRatingRounded: number
+    // city: string
     id: string
     legacyId: number
     name: string
   }
-  wouldTakeAgainCount: number
+  // wouldTakeAgainCount: number
   wouldTakeAgainPercentRounded: number
 }
 

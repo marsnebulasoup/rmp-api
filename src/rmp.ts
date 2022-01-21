@@ -69,7 +69,7 @@ export class RMP {
 
   async getProfessorDetails(query: string): Promise<false | NewDetailedProfessorSearch[]> {
     const body = {
-      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{avgDifficulty avgDifficultyRounded avgRatingRounded department firstName id lastName legacyId numRatings ratings{edges{node{attendanceMandatory clarityRatingRounded class comment courseType createdByUser date difficultyRatingRounded flagStatus grade helpfulRatingRounded iWouldTakeAgain id isForCredit isForOnlineClass legacyId qualityRating ratingTags textbookIsUsed thumbsDownTotal thumbsUpTotal}}}school{avgRatingRounded city id legacyId name}wouldTakeAgainCount wouldTakeAgainPercentRounded}}resultCount}}}`,
+      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings wouldTakeAgainPercentRounded avgDifficultyRounded ratings(first:1){edges{node{qualityRating difficultyRatingRounded clarityRatingRounded class isForCredit helpfulRatingRounded attendanceMandatory isForOnlineClass iWouldTakeAgain grade id legacyId ratingTags textbookIsUsed comment thumbsUpTotal thumbsDownTotal date}}}school{id legacyId name}}}}}}`,
       "variables": {
         "query": {
           "text": query,

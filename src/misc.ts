@@ -9,7 +9,7 @@ export function createResponse(response: any[] = [], statusCode: code = 200, err
       status: statusCode === 200,
       data: response,
       error: error || false
-    }, null, DEBUG && 2),
+    }, null, DEBUG ? 2 : undefined),
     {
       status: statusCode,
       statusText: codes[statusCode],

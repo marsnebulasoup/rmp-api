@@ -20,7 +20,7 @@ export async function professor(params: Params): Promise<Response> {
 
 export async function professorDetails(params: Params): Promise<Response> {
   const rmp = new RMP(params.schoolID)
-  const professors = await rmp.getProfessorDetails(params.query)
+  const professors = await rmp.getProfessorDetails(params.query, params.numRatings)
   if (professors) return createResponse(professors, 200)
   else return createResponse([], 500, "Error searching for professor details.")
 }

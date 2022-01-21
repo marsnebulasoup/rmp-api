@@ -168,5 +168,6 @@ export interface NewDetailedProfessorSearch {
 
 export interface Params {
   schoolID?: string;
+  numRatings?: number;
   query: string;
 }

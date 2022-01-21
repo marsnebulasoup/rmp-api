@@ -67,9 +67,12 @@ export class RMP {
     }
   }
 
-  async getProfessorDetails(query: string): Promise<false | NewDetailedProfessorSearch[]> {
+  async getProfessorDetails(query: string, numReviews = 1): Promise<false | NewDetailedProfessorSearch[]> {
+    numReviews = parseInt(String(numReviews));
+    if(isNaN(numReviews)) numReviews = 1;
+    
     const body = {
-      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings wouldTakeAgainPercentRounded avgDifficultyRounded ratings(first:1){edges{node{qualityRating difficultyRatingRounded clarityRatingRounded class isForCredit helpfulRatingRounded attendanceMandatory isForOnlineClass iWouldTakeAgain grade id legacyId ratingTags textbookIsUsed comment thumbsUpTotal thumbsDownTotal date}}}school{id legacyId name}}}}}}`,
+      "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings wouldTakeAgainPercentRounded avgDifficultyRounded ratings(first:${numReviews}){edges{node{qualityRating difficultyRatingRounded clarityRatingRounded class isForCredit helpfulRatingRounded attendanceMandatory isForOnlineClass iWouldTakeAgain grade id legacyId ratingTags textbookIsUsed comment thumbsUpTotal thumbsDownTotal date}}}school{id legacyId name}}}}}}`,
       "variables": {
         "query": {
           "text": query,

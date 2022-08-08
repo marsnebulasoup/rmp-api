@@ -116,17 +116,21 @@ export class RMP {
     }
     const resp = await this.#fetch(body) as OldDetailedProfessorSearch;
     try {
-      const professors: NewDetailedProfessorSearch[] = resp.data.newSearch.teachers.edges.map((professor) => {
-        const prof: any = professor.node;
-        prof.ratings = professor.node.ratings.edges.map(rating => {
+      const professors: NewDetailedProfessorSearch[] = [];
+      for (const professor of resp.data.newSearch.teachers.edges) {
+        const cleanProf: any = professor.node;
+        cleanProf.ratings = professor.node.ratings.edges.map(rating => {
           rating.node.comment = sanitizeHtml(rating.node.comment, {
             allowedTags: false,
             allowedAttributes: false
           })
           return rating.node
+        });
+        professors.push({
+          ...cleanProf,
+          ...await this.getProfessorRatingInfo(professor.node.id)
         })
-        return prof
-      })
+      }
       return professors
     }
     catch (e) {

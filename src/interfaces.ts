@@ -123,6 +123,28 @@ export interface NewProfessorSearch {
   department: string
 }
 
+export interface Rating {
+  attendanceMandatory: "" | "mandatory" | "non mandatory"
+  clarityRatingRounded: number
+  class: string
+  comment: string
+  // courseType: string
+  date: string
+  difficultyRatingRounded: number
+  // flagStatus: "FLAGGED" | "UNFLAGGED"
+  grade: string
+  helpfulRatingRounded: string
+  iWouldTakeAgain: null | boolean
+  id: string
+  isForOnlineClass: boolean
+  legacyId: number
+  qualityRating: number
+  ratingTags: string
+  textbookIsUsed: boolean
+  thumbsDownTotal: number
+  thumbsUpTotal: number
+}
+
 export interface NewDetailedProfessorSearch {
   // avgDifficulty: number
   avgDifficultyRounded: number
@@ -132,29 +154,7 @@ export interface NewDetailedProfessorSearch {
   id: string
   lastName: string
   legacyId: number
-  ratings: [
-    {
-      attendanceMandatory: "" | "mandatory" | "non mandatory"
-      clarityRatingRounded: number
-      class: string
-      comment: string
-      // courseType: string
-      date: string
-      difficultyRatingRounded: number
-      // flagStatus: "FLAGGED" | "UNFLAGGED"
-      grade: string
-      helpfulRatingRounded: string
-      iWouldTakeAgain: null | boolean
-      id: string
-      isForOnlineClass: boolean
-      legacyId: number
-      qualityRating: number
-      ratingTags: string
-      textbookIsUsed: boolean
-      thumbsDownTotal: number
-      thumbsUpTotal: number
-    }
-  ]
+  ratings: Rating[]
   school: {
     // avgRatingRounded: number
     // city: string

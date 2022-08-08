@@ -7,7 +7,9 @@
     "build": "webpack",
     "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
     "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-    "test": "jest --config jestconfig.json --verbose"
+    "test": "jest --config jest.config.ts --coverage",
+    "test_cov_open": "npm run test && npm run open_coverage_report",
+    "open_coverage_report": "start coverage/lcov-report/index.html"
   },
   "author": "author",
   "license": "MIT OR Apache-2.0",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^3.0.0",
     "@types/jest": "^26.0.23",
+    "@types/node-fetch": "^2.6.2",
     "@types/sanitize-html": "^2.5.0",
     "@types/service-worker-mock": "^2.0.1",
     "@types/url-parse": "^1.4.4",
@@ -30,15 +33,18 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-typescript": "^3.0.0",
     "jest": "^27.0.1",
+    "jest-extended": "^3.0.2",
     "prettier": "^2.3.0",
     "service-worker-mock": "^2.0.5",
     "ts-jest": "^27.0.1",
     "ts-loader": "^9.2.2",
+    "ts-node": "^10.9.1",
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "sanitize-html": "^2.5.3",
     "url-parse": "^1.5.3"
   }

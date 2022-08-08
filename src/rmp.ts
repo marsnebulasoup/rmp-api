@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import { NewDetailedProfessorSearch, NewProfessorSearch, NewSchoolSearch, OldDetailedProfessorSearch, OldProfessorSearch, OldSchoolSearch } from "./interfaces";
 import sanitizeHtml from 'sanitize-html';
+import fetch from "./fetch";
 
 export class RMP {
   schoolID?: string;

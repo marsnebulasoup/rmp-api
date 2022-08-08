@@ -28,6 +28,10 @@ describe('handle professor page', () => {
             legacyId: expect.any(Number),
             firstName: expect.any(String),
             lastName: expect.any(String),
+            avgRatingRounded: expect.any(Number),
+            numRatings: expect.any(Number),
+            wouldTakeAgainPercentRounded: expect.any(Number),
+            avgDifficultyRounded: expect.any(Number),
             school: {
               name: expect.any(String),
               legacyId: expect.any(Number),
@@ -58,6 +62,10 @@ describe('handle professor page', () => {
             legacyId: expect.any(Number),
             firstName: expect.stringContaining("Kristopher"),
             lastName: expect.stringContaining("Marcus"),
+            avgRatingRounded: expect.any(Number),
+            numRatings: expect.any(Number),
+            wouldTakeAgainPercentRounded: expect.any(Number),
+            avgDifficultyRounded: expect.any(Number),
             school: {
               name: expect.any(String),
               legacyId: expect.any(Number),

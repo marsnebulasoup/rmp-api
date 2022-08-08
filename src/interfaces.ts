@@ -37,6 +37,10 @@ export interface OldProfessorSearch {
               legacyId: number;
               firstName: string;
               lastName: string;
+              // avgRatingRounded: number;
+              // numRatings: number;
+              // wouldTakeAgainPercentRounded: number;
+              // avgDifficultyRounded: number;
               school: {
                 name: string
                 id: string
@@ -110,11 +114,33 @@ export interface OldDetailedProfessorSearch {
   }
 }
 
+export interface OldRatingInfo {
+  data: {
+    node: {
+      avgRatingRounded: number
+      numRatings: number
+      wouldTakeAgainPercentRounded: number
+      avgDifficultyRounded: number
+    }
+  }
+}
+
+export interface NewRatingInfo {
+  avgRatingRounded: number
+  numRatings: number
+  wouldTakeAgainPercentRounded: number
+  avgDifficultyRounded: number
+}
+
 export interface NewProfessorSearch {
   id: string;
   legacyId: number;
   firstName: string;
   lastName: string;
+  avgRatingRounded: number;
+  numRatings: number;
+  wouldTakeAgainPercentRounded: number;
+  avgDifficultyRounded: number;
   school: {
     name: string;
     legacyId: number;

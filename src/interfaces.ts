@@ -37,6 +37,10 @@ export interface OldProfessorSearch {
               legacyId: number;
               firstName: string;
               lastName: string;
+              // avgRatingRounded: number;
+              // numRatings: number;
+              // wouldTakeAgainPercentRounded: number;
+              // avgDifficultyRounded: number;
               school: {
                 name: string
                 id: string
@@ -110,17 +114,61 @@ export interface OldDetailedProfessorSearch {
   }
 }
 
+export interface OldRatingInfo {
+  data: {
+    node: {
+      avgRatingRounded: number
+      numRatings: number
+      wouldTakeAgainPercentRounded: number
+      avgDifficultyRounded: number
+    }
+  }
+}
+
+export interface NewRatingInfo {
+  avgRatingRounded: number
+  numRatings: number
+  wouldTakeAgainPercentRounded: number
+  avgDifficultyRounded: number
+}
+
 export interface NewProfessorSearch {
   id: string;
   legacyId: number;
   firstName: string;
   lastName: string;
+  avgRatingRounded: number;
+  numRatings: number;
+  wouldTakeAgainPercentRounded: number;
+  avgDifficultyRounded: number;
   school: {
     name: string;
     legacyId: number;
     id: string;
   }
   department: string
+}
+
+export interface Rating {
+  attendanceMandatory: "" | "mandatory" | "non mandatory"
+  clarityRatingRounded: number
+  class: string
+  comment: string
+  // courseType: string
+  date: string
+  difficultyRatingRounded: number
+  // flagStatus: "FLAGGED" | "UNFLAGGED"
+  grade: string
+  helpfulRatingRounded: string
+  iWouldTakeAgain: null | boolean
+  id: string
+  isForOnlineClass: boolean
+  legacyId: number
+  qualityRating: number
+  ratingTags: string
+  textbookIsUsed: boolean
+  thumbsDownTotal: number
+  thumbsUpTotal: number
 }
 
 export interface NewDetailedProfessorSearch {
@@ -132,29 +180,7 @@ export interface NewDetailedProfessorSearch {
   id: string
   lastName: string
   legacyId: number
-  ratings: [
-    {
-      attendanceMandatory: "" | "mandatory" | "non mandatory"
-      clarityRatingRounded: number
-      class: string
-      comment: string
-      // courseType: string
-      date: string
-      difficultyRatingRounded: number
-      // flagStatus: "FLAGGED" | "UNFLAGGED"
-      grade: string
-      helpfulRatingRounded: string
-      iWouldTakeAgain: null | boolean
-      id: string
-      isForOnlineClass: boolean
-      legacyId: number
-      qualityRating: number
-      ratingTags: string
-      textbookIsUsed: boolean
-      thumbsDownTotal: number
-      thumbsUpTotal: number
-    }
-  ]
+  ratings: Rating[]
   school: {
     // avgRatingRounded: number
     // city: string

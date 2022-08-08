@@ -1,12 +1,7 @@
 name = "rmp-api"
-type = "javascript"
-zone_id = ""
-account_id = ""
-route = ""
 workers_dev = true
 compatibility_date = "2021-10-23"
+main = "dist/worker.js"
 
 [build]
 command = "npm install && npm run build"
-[build.upload]
-format = "service-worker"

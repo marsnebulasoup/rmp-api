@@ -1,7 +1,7 @@
 {
-  "name": "worker-typescript-template",
+  "name": "rmp-api",
   "version": "1.0.0",
-  "description": "Cloudflare worker TypeScript template",
+  "description": "An API wrapper for Rate My Professor, built for the \"Rate My Professor, for ACC\" Chrome extension.",
   "main": "dist/worker.js",
   "scripts": {
     "build": "webpack",
@@ -11,8 +11,8 @@
     "test_cov_open": "npm run test && npm run open_coverage_report",
     "open_coverage_report": "start coverage/lcov-report/index.html"
   },
-  "author": "author",
-  "license": "MIT OR Apache-2.0",
+  "author": "marsnebulasoup",
+  "license": "",
   "eslintConfig": {
     "root": true,
     "extends": [

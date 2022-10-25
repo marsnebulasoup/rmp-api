@@ -1,6 +1,6 @@
 # ʕ •́؈•̀) `rmp-api`
 
-An API wrapper for Rate My Professor, built for the "Rate My Professor, for ACC" Chrome extension.
+An API wrapper for Rate My Professor, built for [the "Rate My Professor, for ACC" Chrome extension.](https://chrome.google.com/webstore/detail/rate-my-professor-for-acc/oekeigfkekkohaffahehenjejpdpnpdp)
 
 ## Routes
 - **`school/`**

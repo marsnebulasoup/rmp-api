@@ -50,6 +50,7 @@ export class RMP {
   }
 
   async searchProfessors(query: string): Promise<NewProfessorSearch[] | false> {
+    query = query.trim().replaceAll(',', ' ');
     const body = {
       "query": `query NewSearchTeachersQuery($query:TeacherSearchQuery!){newSearch{teachers(query:$query){edges{node{firstName lastName id legacyId department avgRatingRounded numRatings wouldTakeAgainPercentRounded avgDifficultyRounded school{id legacyId name}}}}}}`,
       "variables": {
@@ -102,6 +103,7 @@ export class RMP {
   }
 
   async getProfessorDetails(query: string, numReviews = 1): Promise<false | NewDetailedProfessorSearch[]> {
+    query = query.trim().replaceAll(',', ' ');   
     numReviews = parseInt(String(numReviews));
     if (isNaN(numReviews)) numReviews = 1;
 
